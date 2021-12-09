@@ -2,35 +2,58 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
- 
-public class PostMethod : MonoBehaviour
+using UnityEngine.SceneManagement;
+
+public class Login : MonoBehaviour
 {
-    InputField username;
-    InputField password;
- 
-    void Start()
+    public string sceneName;
+    string username;
+    string password;
+    string loginJson;
+    public class UserData 
     {
-        username = GameObject.Find("InputField-username").GetComponent<InputField>();
-        password = GameObject.Find("InputField-password").GetComponent<InputField>();
-        GameObject.Find("ConnectButton").GetComponent<Button>().onClick.AddListener(PostData);
+        public string name;
+        public string password;
+    }
+
+    public void OnButtonPress()
+    {
+        username = GameObject.Find("InputField-username").GetComponent<InputField>().text;
+        password = GameObject.Find("InputField-password").GetComponent<InputField>().text;
+        StartCoroutine(LoginPost(username, password));
     }
  
-    void PostData() => StartCoroutine(PostData_Coroutine());
- 
-    IEnumerator PostData_Coroutine()
+    public IEnumerator LoginPost(string username, string password)
     {
-        string uri = "https://nftbattleapi.beacontracker.software/login";
-        WWWForm form = new WWWForm();
-        form.AddField("name", username.text);
-        form.AddField("password", password.text);
-        using(UnityWebRequest request = UnityWebRequest.Post(uri, form))
+        //@TODO: call API login
+        // Add Token to headers
+
+        var user = new UserData();
+        user.name = username;
+        user.password = password;
+
+        string json = JsonUtility.ToJson(user);
+
+        var req = new UnityWebRequest("https://nftbattleapi.beacontracker.software/login", "POST");
+        byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
+        req.uploadHandler = (UploadHandler)new UploadHandlerRaw(jsonToSend);
+        req.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+        req.SetRequestHeader("Content-Type", "application/json");
+
+        //Send the request then wait here until it returns
+        yield return req.SendWebRequest();
+
+        if (req.isNetworkError)
         {
-            yield return request.SendWebRequest();
-            Debug.Log(request.downloadHandler.text);
-            if (request.isNetworkError || request.isHttpError)
-                Debug.Log(request.error);
-            else
-                Debug.Log(request.downloadHandler.text);
+            Debug.Log("Error While Sending: " + req.error);
         }
+        else
+        {
+            Debug.Log("Received: " + req.downloadHandler.text);
+            if (!req.downloadHandler.text.Contains("não")){
+                SceneManager.LoadScene(sceneName);
+            }
+        }
+
     }
 }
