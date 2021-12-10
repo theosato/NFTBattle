@@ -32,10 +32,10 @@ ModelImporter:
     second: attack01
   - first:
       74: 4189676145174806922
-    second: attack02
+    second: attack
   - first:
       74: -1518165454022731188
-    second: special01
+    second: special
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -61,7 +61,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -331,7 +331,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: attack02
+      name: attack
       takeName: attack02
       internalID: 0
       firstFrame: 0
@@ -360,7 +360,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: special01
+      name: special
       takeName: special01
       internalID: 0
       firstFrame: 0
@@ -445,7 +445,7 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
