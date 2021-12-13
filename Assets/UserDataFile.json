@@ -1,0 +1,10 @@
+{
+    "username": "theosato",
+    "wallet": "0x66FF2beE6693a3720ebec633c383002F8cCB17d7",
+    "jwt": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiI2MWFlNTg3MWZjNTI5MGYyOTI0YTEyZTgiLCJleHAiOjE2MzkxMjEwMzksImlzcyI6ImJlYWNvbnRyYWNrZXIuY29tLmJyIiwiYXVkIjoiYmVhY29udHJhY2tlci5jb20uYnIifQ.zZLzMktGyIoHR3j0tOzoNHYJDP7OCmH8iyRVkEG8u50",
+    "monsters": [
+        "Growlmon",
+        "Catmon",
+        "Metalmonster"
+    ]
+}

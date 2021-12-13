@@ -6,12 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/NFTBattle.unity
-    guid: 11fc68d23897cad4e89d19793e7a8e15
-  - enabled: 1
     path: Assets/Scenes/LoginScene.unity
     guid: 132700b3d7e614241a9b6a245e059695
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  m_configObjects: {}
+    path: Assets/Scenes/MainScene.unity
+    guid: 33d0e06c8884bde42b476824bb602346
+  m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 76113d195ca64ce4a9c08405cd8f9555,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4306833da0da58f41ae341eebbc85b96,
+      type: 2}
